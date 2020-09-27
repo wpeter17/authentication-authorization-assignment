@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/head') -%>
+  <body>
+    <section class="main-body container">
+      <div class="intro">
+        <h1><%= welcomeMsg %></h1>
+        <div class="welcome">
+          <p><%= introMsg %></p>
+          <div class="start">
+            <h4>Sign in to proceed</h4>
+            <br />
+            <div class="option">
+              <a class="btn btn-outline-primary" href="/doctor/login"
+                >Doctor Sign In</a
+              >
+              <a class="btn btn-outline-primary" href="/admin/login"
+                >Admin Sign In</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

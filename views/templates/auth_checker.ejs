@@ -1,0 +1,14 @@
+<!-- Check for user on page load  -->
+<% if (typeof currentUser != "undefined") { %>
+
+<!-- make user available to script tag -->
+<% var currentUser = currentUser %>
+
+<!-- use script tag to access ejs data and local storage -->
+<script>
+  alert(currentUser);
+  let currentUser = <%= JSON.stringify(currentUser) %>;
+  localStorage.setItem('currentUser', JSON.stringify({'currentUser': currentUser}));
+</script>
+
+<% } %>

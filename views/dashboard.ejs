@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/head') -%>
+  <body>
+    <section class="main-body container">
+      <h1><%= user === 'admin' ? 'Admin' : 'Doctor' %> Dashboard</h1>
+      <div class="">
+        <h4>System Users</h4>
+        <% users.forEach(function(user) {%><a
+          href="/user/<%= user._id%>"
+          class="list-group-item text-dark"
+          ><%=user.firstName %> <%=user.lastName%></a
+        ><%});%> <%= currentUser %>
+      </div>
+
+      <div class="">
+        <h4>Register New Users</h4>
+        <p>
+          <% if (user == "admin") {%>
+          <a class="btn btn-outline-primary" href="/user/register"
+            >Register User</a
+          >
+          <%}%>
+        </p>
+      </div>
+    </section>
+    <%- include('./templates/auth_checker') -%>
+  </body>
+</html>
